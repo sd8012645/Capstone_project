@@ -1,16 +1,9 @@
-# Enron Spam Dataset
-The Enron-Spam dataset is a fantastic ressource collected by V. Metsis, I. Androutsopoulos and G. Paliouras and described in their publication ["Spam Filtering with 
-Naive Bayes - Which Naive Bayes?"](https://nes.aueb.gr/ipl/nlp/pubs/ceas2006_paper.pdf). The dataset contains a total of 17.171 spam and 16.545 non-spam ("ham") e-mail messages (33.716 e-mails total). The original dataset and documentation can be found [here](http://www2.aueb.gr/users/ion/data/enron-spam/readme.txt).
+We use three openly available email–spam corpora:
+Enron Spam Data (Kaggle, marcelwiechmann) – main dataset-https://www.kaggle.com/datasets/marcelwiechmann/enron-spam-data
 
-However, the original datasets is recorded in such a way, that every single mail is in a seperate txt-file, distributed over several directories. This can make reading in the
-data a bit cumbersome, especially for beginners. Since the data set is such a fantastic ressource, I wanted to create a offer a single download of the data through a simple csv-file.
+Spam Email Dataset (Kaggle, jackksoncsie)-https://www.kaggle.com/datasets/marcelwiechmann/enron-spam-data
 
-**You probably only need the data file ("enron_spam_data.csv").** The python file ("build_data_file.py") contains the script used to construct the csv file (downloading the original raw data from the website, unpacking it, processing it and saving it into the csv file).
+Email Spam Classification (HuggingFace, UniqueData)- https://huggingface.co/datasets/UniqueData/email-spam-classification
 
-Processing of the data is minimal: The dataset contains the following columns:
-Column | Explanation
----|---
-Subject | The subject line of the e-mail
-Message | The content of the e-mail. Can contain an empty string if the message had only a subject line and no body. In case of forwarded emails or replies, this also contains the original message with subject line, "from:", "to:", etc.
-Spam/Ham | Has the values "spam" or "ham". Whether the message was categorized as a spam message or not.
-Date | The date the e-mail arrived. Has a YYYY-MM-DD format.
+Summary:
+We use three open datasets for email spam classification. Our main corpus is the Enron Spam Data from Kaggle, which is a single CSV combining the six Enron‑Spam datasets introduced by Metsis et al. (CEAS 2006) and built from real Enron mailboxes plus injected spam from external sources. As a second dataset we use Kaggle’s Spam email Dataset (emails.csv), a 5,728‑message corpus originally assembled for MITx’s Analytics Edge course, where ham messages come from Enron executive Vincent Kaminski’s inbox and spam comes from the SpamAssassin public corpus and Project Honey Pot, with roughly a 75/25 ham–spam split. Finally, we include the UniqueData email‑spam‑classification dataset from HuggingFace, a small (84‑email) vendor‑curated sample of English emails labeled as spam or not spam, provided under a CC BY‑NC‑ND 4.0 license as an example of the commercial datasets offered by the vendor.
